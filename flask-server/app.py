@@ -7,9 +7,9 @@ from flask_jwt_extended import JWTManager, create_access_token, set_access_cooki
 from datetime import datetime, timedelta
 from config import current_config
 from models import User, Token
-from resources.user import ns as user_ns
-from resources.event import ns as event_ns
-from resources.ticket import ns as ticket_ns
+from routes.user import ns as user_ns
+from routes.event import ns as event_ns
+from routes.ticket import ns as ticket_ns
 
 # Routes that do not fresh access token
 NON_REFRESH_ROUTES = ["/user/logout", "/ticket/request_qr_data"]
@@ -38,7 +38,7 @@ def create_app(config=None):
     api.add_namespace(ticket_ns)
 
     if app.config.get("TEST_MODE"):
-        from resources.ticket_no_sign import ns as ticket_no_sign_ns
+        from routes.ticket_no_sign import ns as ticket_no_sign_ns
         api.add_namespace(ticket_no_sign_ns)
 
     @jwt.user_lookup_loader

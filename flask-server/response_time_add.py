@@ -3,7 +3,7 @@ from datetime import datetime
 from werkzeug.security import generate_password_hash
 #Wfrom app import create_app, db
 from app import *
-from resources import *
+from routes import *
 from models import User
 import time
 import matplotlib.pyplot as plt
