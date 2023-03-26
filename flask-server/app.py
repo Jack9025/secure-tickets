@@ -37,10 +37,6 @@ def create_app(config=None):
     api.add_namespace(event_ns)
     api.add_namespace(ticket_ns)
 
-    if app.config.get("TEST_MODE"):
-        from routes.ticket_no_sign import ns as ticket_no_sign_ns
-        api.add_namespace(ticket_no_sign_ns)
-
     @jwt.user_lookup_loader
     def user_lookup_callback(_jwt_header, jwt_data):
         identity = jwt_data["sub"]
