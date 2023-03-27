@@ -80,6 +80,7 @@ const QRCodeScanner = (props) => {
 
     return (
         <div className={'contentContainer qrScannerDiv'}>
+            <h1 className={'scannerHeader'}>Scan Ticket: {event.event_name}</h1>
             {content}
         </div>
     )

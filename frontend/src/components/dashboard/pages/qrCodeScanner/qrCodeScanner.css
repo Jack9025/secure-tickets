@@ -2,6 +2,11 @@
     height: calc(100vh - 62px);
 }
 
+.scannerHeader {
+    text-align: center;
+    color: black;
+}
+
 .ticketResponse {
     text-align: center;
     font-size: 1.2em;
