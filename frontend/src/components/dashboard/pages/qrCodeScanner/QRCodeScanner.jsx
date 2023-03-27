@@ -16,6 +16,7 @@ const QRCodeScanner = (props) => {
     let event = props.event;
     let [validImg, setValidImg] = useState();
     let [ticketMsg, setTicketMsg] = useState();
+    let [ticketType, setTicketType] = useState();
     const [hasScanned, setHasScanned] = useState(false);
     const scannerRef = useRef(null);
 
@@ -50,6 +51,7 @@ const QRCodeScanner = (props) => {
             // valid ticket
             setValidImg(Tick);
             setTicketMsg(response.msg);
+            setTicketType(response.ticket_type);
         })
         .catch(error => {
             console.log(error)
@@ -72,10 +74,19 @@ const QRCodeScanner = (props) => {
         content =
             <div>
                 <img className={'ticketImgResponse'} src={validImg} />
-                <p className={'ticketResponse'}>
-                    {validImg === Cross ? <span style={{ color: "red"}}>Error: </span> : ''}
-                    {ticketMsg}
-                </p>
+                <div className={'ticketResponseContainer'}>
+                    <p className={'ticketResponseMsg'}>
+                        {validImg === Cross ?
+                            <span style={{ color: "red"}}>Error: </span>
+                        :
+                            <span style={{ color: "green"}}>Success: </span>}
+                        {ticketMsg}
+                    </p>
+                    {validImg === Tick && <br/>}
+                    {validImg === Tick &&
+                        <p className={'ticketResponseText'}>Ticket Type: {ticketType}</p>
+                    }
+                </div>
             </div>;
     }
 
