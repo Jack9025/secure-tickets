@@ -8,6 +8,7 @@ import httpClient from "../../../../httpClient";
 import {getCookie} from "../../../../helpers";
 
 import {Tick, Cross} from "../../../../img";
+import Button from "react-bootstrap/Button";
 
 const QRCodeScanner = (props) => {
     const user = props.user;
@@ -70,7 +71,7 @@ const QRCodeScanner = (props) => {
     } else {
         content =
             <div>
-                <img className={'validImg'} src={validImg} />
+                <img className={'ticketImgResponse'} src={validImg} />
                 <p className={'ticketResponse'}>
                     {validImg === Cross ? <span style={{ color: "red"}}>Error: </span> : ''}
                     {ticketMsg}
@@ -82,6 +83,12 @@ const QRCodeScanner = (props) => {
         <div className={'contentContainer qrScannerDiv'}>
             <h1 className={'scannerHeader'}>Scan Ticket: {event.event_name}</h1>
             {content}
+            {hasScanned &&
+                <Button className={'scannerButton'} onClick={() => {
+                    setHasScanned(false);
+                    scannerRef.current.start();
+                }} variant="primary">Scan Next Ticket</Button>
+            }
         </div>
     )
 }
