@@ -47,7 +47,7 @@ docker-compose stop
 ### Populating the Database
 To populate the database with some sample data, run the command:
 ```cmd
-docker exec ticketing-webapp-flask-1 python sample_data.py
+docker exec secure-tickets-flask-1 python sample_data.py
 ```
 This command will create the following users that can be used in the application:
 * **Test user:**
@@ -88,13 +88,9 @@ On the user home page, users can view and search for events.
 <img src="screenshots/home_user.png" width="150" alt="Screenshot showing the home page"/>
 
 ### Buying Tickets
-When a user selects to buy a ticket, they will be presented with details of the event and the option to buy tickets.
+When a user selects to buy a ticket, they will be presented with details of the event and the option to buy tickets. When the user is buying tickets, a modal will popup which allows the user to select the ticket quantity and ticket type (either standard, VIP or deluxe).
 
-<img src="screenshots/event_details.png" width="150" alt="Screenshot of event details page"/>
-
-When the user is buying tickets, a modal will popup which allows the user to select the ticket quantity and ticket type (either standard, VIP or deluxe).
-
-<img src="screenshots/buy_ticket.png" width="150" alt="Screenshot of buy ticket modal"/>
+<img src="screenshots/event_details.png" width="150" alt="Screenshot of event details page"/> <img src="screenshots/buy_ticket.png" width="150" alt="Screenshot of buy ticket modal"/>
 
 ### Account
 On the account page, the user is able to view their account information and view purchased tickets.
@@ -117,13 +113,9 @@ The server-side security features of the ticket include:
 * Tickets are marked as used in the database when a valid ticket has been scanned to prevent a ticket from being used more than once.
 
 ### Ticket Scanning
-On the management home page, while logged in as a user with the management role, the user has the option to select an event to scan tickets for:
+On the management home page, while logged in as a user with the management role, the user has the option to select an event to scan tickets for. When an event is selected, the camera will open to allow ticket QR codes to be scanned.
 
-<img src="screenshots/home_management.png" width="150" alt="Screenshot of management home page"/>
-
-When the management user has selected an event to scan tickets, the camera will open to allow ticket QR codes to be scanned.
-
-<img src="screenshots/scanner.png" width="150" alt="Screenshot of QR code scanner page"/>
+<img src="screenshots/home_management.png" width="150" alt="Screenshot of management home page"/> <img src="screenshots/scanner.png" width="150" alt="Screenshot of QR code scanner page"/>
 
 ### Ticket Verification
 Once a ticket is scanned by a management user, the event ID (of the current event) and QR data is sent to the server. The server will verify the ticket is valid for the current event and will check the integrity of the ticket.
