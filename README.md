@@ -134,8 +134,5 @@ When a valid ticket is scanned, the server will return a success message with th
 
 When an invalid ticket is scanned (e.g. non-ticket QR code, modified ticket, previously scanned ticket, expired ticket from previous user session, ticket for another event, ...), the server will return a failure message and this will be displayed to the management user.
 
-<img src="screenshots/ticket_invalid.png" width="150" alt="Screenshot of invalid ticket error message"/>
-<img src="screenshots/ticket_invalid_used.png" width="150" alt="Screenshot of used ticket error message"/>
-<img src="screenshots/ticket_invalid_outdated.png" width="150" alt="Screenshot of outdated ticket error message"/>
-<img src="screenshots/ticket_invalid_wrong_event.png" width="150" alt="Screenshot of wrong error ticket error message"/>
+<img src="screenshots/ticket_invalid.png" width="150" alt="Screenshot of invalid ticket error message"/> <img src="screenshots/ticket_invalid_used.png" width="150" alt="Screenshot of used ticket error message"/> <img src="screenshots/ticket_invalid_outdated.png" width="150" alt="Screenshot of outdated ticket error message"/> <img src="screenshots/ticket_invalid_wrong_event.png" width="150" alt="Screenshot of wrong error ticket error message"/>
 
