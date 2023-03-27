@@ -15,8 +15,7 @@ def generate_token():
 # Generates a random 32-byte key
 def gen_key():
     key = get_random_bytes(32)
-
-    return key
+    return b64encode(key)
 
 
 # Encrypts plain_text using AES-256-CBC
