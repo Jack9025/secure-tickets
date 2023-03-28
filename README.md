@@ -90,33 +90,33 @@ For more details, read the individual README files:
 ### Register & Login
 The register page, allows a user is to register an account. Validating the user details is performed both by the client-side application and the server. Users will automatically be assigned the role 'user' which means that they are a customer of the application. Management users can be created from the server.
 
-<img src="screenshots/register.png" width="150" alt="Screenshot of register page"/>
+<img src=".screenshots/register.png" width="150" alt="Screenshot of register page"/>
 
 The login page allows a user to sign in with their credentials.
 
-<img src="screenshots/login.png" width="150" alt="Screenshot of login page"/>
+<img src=".screenshots/login.png" width="150" alt="Screenshot of login page"/>
 
 When the user successfully logs in, the server will determine which role they have (either user or management) and the client-side application will then generate the pages of the application based on that role.
 
 ### Events
 On the user home page, users can view and search for events.
 
-<img src="screenshots/home_user.png" width="150" alt="Screenshot showing the home page"/>
+<img src=".screenshots/home_user.png" width="150" alt="Screenshot showing the home page"/>
 
 ### Buying Tickets
 When a user selects an event, they will be presented with details of the event and the option to buy tickets. When the user is buying tickets, a modal will popup which allows the user to select the ticket quantity and ticket type (either standard, VIP or deluxe).
 
-<img src="screenshots/event_details.png" width="150" alt="Screenshot of event details page"/> <img src="screenshots/buy_ticket.png" width="150" alt="Screenshot of buy ticket modal"/>
+<img src=".screenshots/event_details.png" width="150" alt="Screenshot of event details page"/> <img src=".screenshots/buy_ticket.png" width="150" alt="Screenshot of buy ticket modal"/>
 
 ### Account
 On the account page, the user is able to view their account information and view purchased tickets.
 
-<img src="screenshots/account.png" width="150" alt="Screenshot of account page showing account information and purchased tickets"/>
+<img src=".screenshots/account.png" width="150" alt="Screenshot of account page showing account information and purchased tickets"/>
 
 ### Ticket QR Code
 When the user presses to view the QR code on a ticket, the application will make a request to the server to generate the data for the QR code. When the server verifies the request and sends the QR data to the user, the QR code image will be generated on the client-side and be presented in a modal.
 
-<img src="screenshots/qr_code.png" width="150" alt="Screenshot of QR code for ticket"/>
+<img src=".screenshots/qr_code.png" width="150" alt="Screenshot of QR code for ticket"/>
 
 The client-side security features of the QR code to ensure the QR code is not screenshotted or recorded include:
 * An animated logo located in the centre of the QR code
@@ -131,16 +131,16 @@ The server-side security features of the ticket include:
 ### Ticket Scanning
 On the management home page, while logged in as a user with the management role, the user has the option to select an event to scan tickets for. When an event is selected, the camera will open to allow ticket QR codes to be scanned.
 
-<img src="screenshots/home_management.png" width="150" alt="Screenshot of management home page"/> <img src="screenshots/scanner.png" width="150" alt="Screenshot of QR code scanner page"/>
+<img src=".screenshots/home_management.png" width="150" alt="Screenshot of management home page"/> <img src=".screenshots/scanner.png" width="150" alt="Screenshot of QR code scanner page"/>
 
 ### Ticket Verification
 Once a ticket is scanned by a management user, the event ID (of the current event) and QR data is sent to the server. The server will verify the ticket is valid for the current event and will check the integrity of the ticket using the signature.
 
 When a valid ticket is scanned, the server will return a success message with the ticket type that the user has. This information is then displayed to the management user.
 
-<img src="screenshots/ticket_valid.png" width="150" alt="Screenshot of valid ticket success message"/>
+<img src=".screenshots/ticket_valid.png" width="150" alt="Screenshot of valid ticket success message"/>
 
 When an invalid ticket is scanned (e.g. non-ticket QR code, modified ticket, previously scanned ticket, expired ticket from previous user session, ticket for another event, ...), the server will return a failure message and this will be displayed to the management user.
 
-<img src="screenshots/ticket_invalid.png" width="150" alt="Screenshot of invalid ticket error message"/> <img src="screenshots/ticket_invalid_used.png" width="150" alt="Screenshot of used ticket error message"/> <img src="screenshots/ticket_invalid_outdated.png" width="150" alt="Screenshot of outdated ticket error message"/> <img src="screenshots/ticket_invalid_wrong_event.png" width="150" alt="Screenshot of wrong error ticket error message"/>
+<img src=".screenshots/ticket_invalid.png" width="150" alt="Screenshot of invalid ticket error message"/> <img src=".screenshots/ticket_invalid_used.png" width="150" alt="Screenshot of used ticket error message"/> <img src=".screenshots/ticket_invalid_outdated.png" width="150" alt="Screenshot of outdated ticket error message"/> <img src=".screenshots/ticket_invalid_wrong_event.png" width="150" alt="Screenshot of wrong error ticket error message"/>
 
