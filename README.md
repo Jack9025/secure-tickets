@@ -92,7 +92,7 @@ The register page, allows a user is to register an account. Validating the user 
 
 <img src="screenshots/register.png" width="150" alt="Screenshot of register page"/>
 
-The login page allows a user to sign with their credentials.
+The login page allows a user to sign in with their credentials.
 
 <img src="screenshots/login.png" width="150" alt="Screenshot of login page"/>
 
@@ -104,7 +104,7 @@ On the user home page, users can view and search for events.
 <img src="screenshots/home_user.png" width="150" alt="Screenshot showing the home page"/>
 
 ### Buying Tickets
-When a user selects to buy a ticket, they will be presented with details of the event and the option to buy tickets. When the user is buying tickets, a modal will popup which allows the user to select the ticket quantity and ticket type (either standard, VIP or deluxe).
+When a user selects an event, they will be presented with details of the event and the option to buy tickets. When the user is buying tickets, a modal will popup which allows the user to select the ticket quantity and ticket type (either standard, VIP or deluxe).
 
 <img src="screenshots/event_details.png" width="150" alt="Screenshot of event details page"/> <img src="screenshots/buy_ticket.png" width="150" alt="Screenshot of buy ticket modal"/>
 
@@ -118,14 +118,14 @@ When the user presses to view the QR code on a ticket, the application will make
 
 <img src="screenshots/qr_code.png" width="150" alt="Screenshot of QR code for ticket"/>
 
-The client-side security features of the QR code to ensure the QR code is not screenshotted or recorded.
-* Animated logo located in the centre
+The client-side security features of the QR code to ensure the QR code is not screenshotted or recorded include:
+* An animated logo located in the centre of the QR code
 * Tapping the QR code generates fireworks
 
 The server-side security features of the ticket include:
-* The QR data includes a signed signature of the ticket details to prevent the modification of a ticket.
+* The QR data includes a signature of the ticket details to prevent the modification of a ticket.
 * The user is only able to have one valid session with the server and any previous session is invalidated to prevent multiple devices generating QR codes for the same ticket.
-* The current session is hashed in placed in the QR data to allow the server to verify that ticket generated was by the current session.
+* The current session is hashed with a fresh salt and placed in the QR data to allow the server to verify that ticket generated was by the current session.
 * Tickets are marked as used in the database when a valid ticket has been scanned to prevent a ticket from being used more than once.
 
 ### Ticket Scanning
@@ -134,7 +134,7 @@ On the management home page, while logged in as a user with the management role,
 <img src="screenshots/home_management.png" width="150" alt="Screenshot of management home page"/> <img src="screenshots/scanner.png" width="150" alt="Screenshot of QR code scanner page"/>
 
 ### Ticket Verification
-Once a ticket is scanned by a management user, the event ID (of the current event) and QR data is sent to the server. The server will verify the ticket is valid for the current event and will check the integrity of the ticket.
+Once a ticket is scanned by a management user, the event ID (of the current event) and QR data is sent to the server. The server will verify the ticket is valid for the current event and will check the integrity of the ticket using the signature.
 
 When a valid ticket is scanned, the server will return a success message with the ticket type that the user has. This information is then displayed to the management user.
 
