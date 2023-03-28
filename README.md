@@ -92,7 +92,7 @@ The register page, allows a user is to register an account. Validating the user 
 
 <img src="screenshots/register.png" width="150" alt="Screenshot of register page"/>
 
-The login page allows a user to sign with their credentials.
+The login page allows a user to sign in with their credentials.
 
 <img src="screenshots/login.png" width="150" alt="Screenshot of login page"/>
 
@@ -123,7 +123,7 @@ The client-side security features of the QR code to ensure the QR code is not sc
 * Tapping the QR code generates fireworks
 
 The server-side security features of the ticket include:
-* The QR data includes a signed signature of the ticket details to prevent the modification of a ticket.
+* The QR data includes a signature of the ticket details to prevent the modification of a ticket.
 * The user is only able to have one valid session with the server and any previous session is invalidated to prevent multiple devices generating QR codes for the same ticket.
 * The current session is hashed with a fresh salt and placed in the QR data to allow the server to verify that ticket generated was by the current session.
 * Tickets are marked as used in the database when a valid ticket has been scanned to prevent a ticket from being used more than once.
@@ -134,7 +134,7 @@ On the management home page, while logged in as a user with the management role,
 <img src="screenshots/home_management.png" width="150" alt="Screenshot of management home page"/> <img src="screenshots/scanner.png" width="150" alt="Screenshot of QR code scanner page"/>
 
 ### Ticket Verification
-Once a ticket is scanned by a management user, the event ID (of the current event) and QR data is sent to the server. The server will verify the ticket is valid for the current event and will check the integrity of the ticket.
+Once a ticket is scanned by a management user, the event ID (of the current event) and QR data is sent to the server. The server will verify the ticket is valid for the current event and will check the integrity of the ticket using the signature.
 
 When a valid ticket is scanned, the server will return a success message with the ticket type that the user has. This information is then displayed to the management user.
 
