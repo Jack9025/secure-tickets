@@ -49,8 +49,15 @@ MYSQL_PASSWORD=<PASSWORD>
 # Host Address
 HOST=<YOUR_IP_ADDRESS>
 ```
+
+#### Self-Signed Certificate
+To generate the self-signed certificate and key files for Nginx, create the directory `nginx/certs`. Then change into this directory in terminal, then run the command:
+```cmd
+openssl req -x509 -newkey rsa:4096 -nodes -out cert.pem -keyout key.pem -days 365
+```
+
 #### Running Docker
-To start up the application, run the command:
+To start up the application, in the root directory, run the command:
 ```cmd
 docker-compose up
 ```
@@ -79,6 +86,7 @@ In your web browser, navigate to:
 ```
 https://<YOUR_IP_ADDRESS>
 ```
+As a self-signed certificate is used, you will have trust the certificate in your browser to access the site.
 ### Bare Metal
 To run this application bare metal, you will need to run Flask and React separately.
 
