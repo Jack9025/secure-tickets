@@ -18,6 +18,11 @@ JWT_SECRET_KEY=<YOUR_SECURE_JWT_KEY>
 SELF_SIGNED=True
 HOST=<YOUR_IP_ADDRESS>
 ```
+### Self-Signed Certificate
+To generate the self-signed certificate and key files, create the directory `certificate` in `flask-server`. Then change into this directory in terminal and run the command:
+```cmd
+openssl req -x509 -newkey rsa:4096 -nodes -out cert.pem -keyout key.pem -days 365
+```
 ### MySQL
 By default, Flask will default to using a SQLite Database.
 
