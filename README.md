@@ -8,10 +8,8 @@
   * [Bare Metal](#Bare-Metal)
 * [Key Features](#Key-Features)
   * [Register & Login](#Register--Login)
-  * [Events](#Events)
-  * [Buying Tickets](#Buying-Tickets)
+  * [Events & Buying Tickets](#Events--Buying-Tickets)
   * [Account](#Account)
-  * [Events](#Events)
   * [Ticket QR Code](#Ticket-QR-Code)
   * [Ticket Scanning](#Ticket-Scanning)
   * [Ticket Verification](#Ticket-Verification)
@@ -96,25 +94,16 @@ For more details, read the individual README files:
 
 ## Key Features
 ### Register & Login
-The register page, allows a user is to register an account. Validating the user details is performed both by the client-side application and the server. Users will automatically be assigned the role 'user' which means that they are a customer of the application. Management users can be created from the server.
+Users are able to register for an account or login to an already existing account. Registered users will automatically be assigned the role 'user' which means that they are a customer. Management users can only be created from the server.
 
-<img src=".screenshots/register.png" width="150" alt="Screenshot of register page"/>
-
-The login page allows a user to sign in with their credentials.
-
-<img src=".screenshots/login.png" width="150" alt="Screenshot of login page"/>
+<img src=".screenshots/register.png" width="150" alt="Screenshot of register page"/> <img src=".screenshots/login.png" width="150" alt="Screenshot of login page"/>
 
 When the user successfully logs in, the server will determine which role they have (either user or management) and the client-side application will then generate the pages of the application based on that role.
 
-### Events
-On the user home page, users can view and search for events.
+### Events & Buying Tickets
+On the user home page, users can view and search for events. The user can select an event, and they will be presented with details of the event and the option to buy tickets. When the user is buying tickets, a modal will popup which allows the user to select the ticket quantity and ticket type (either standard, VIP or deluxe).
 
-<img src=".screenshots/home_user.png" width="150" alt="Screenshot showing the home page"/>
-
-### Buying Tickets
-When a user selects an event, they will be presented with details of the event and the option to buy tickets. When the user is buying tickets, a modal will popup which allows the user to select the ticket quantity and ticket type (either standard, VIP or deluxe).
-
-<img src=".screenshots/event_details.png" width="150" alt="Screenshot of event details page"/> <img src=".screenshots/buy_ticket.png" width="150" alt="Screenshot of buy ticket modal"/>
+<img src=".screenshots/home_user.png" width="150" alt="Screenshot showing the home page"/> <img src=".screenshots/event_details.png" width="150" alt="Screenshot of event details page"/> <img src=".screenshots/buy_ticket.png" width="150" alt="Screenshot of buy ticket modal"/>
 
 ### Account
 On the account page, the user is able to view their account information and view purchased tickets.
