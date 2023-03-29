@@ -15,7 +15,7 @@
   * [Ticket Verification](#Ticket-Verification)
 
 ## Introduction
-Secure Tickets, created as part of a Stage 4/Masters team project, is a web application for a secure ticketing system for in-person events. This application allows users to buy tickets for events and present their ticket as a QR Code. Management users, within this system, are able to scan tickets and verify their authenticity. The main security of this application employs a digital signature scheme to maintain ticket integrity of the QR code and encryption to maintain ticket confidentiality through a secure connection.
+Secure Tickets, created as part of a Stage 4/Masters team project, is a web application for a secure ticketing system for in-person events. This application allows users to buy tickets for events and present their ticket as a QR Code. Management users, within this system, are able to scan tickets and verify their authenticity. The main security of this application involves using a digital signature scheme to maintain ticket integrity in the QR code and encryption through a secure connection to maintain ticket confidentiality.
 
 
 This application uses the following web stack:
@@ -126,7 +126,7 @@ The server-side security features of the ticket include:
 * Tickets are marked as used in the database when a valid ticket has been scanned to prevent a ticket from being used more than once.
 
 ### Ticket Scanning
-On the management home page, while logged in as a user with the management role, the user has the option to select an event to scan tickets for. When an event is selected, the camera will open to allow ticket QR codes to be scanned.
+On the management home page, the management user has the option to select an event to scan tickets for. When an event is selected, the camera will open to allow ticket QR codes to be scanned.
 
 <img src=".screenshots/home_management.png" width="150" alt="Screenshot of management home page"/> <img src=".screenshots/scanner.png" width="150" alt="Screenshot of QR code scanner page"/>
 
