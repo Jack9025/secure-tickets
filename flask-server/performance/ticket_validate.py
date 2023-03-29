@@ -5,6 +5,10 @@ from performance.base import PerformanceBase
 
 
 class PerformanceTicketValidate(PerformanceBase):
+    def __init__(self):
+        super().__init__()
+        self.route_tested = '/ticket/validate'
+
     def generate_qr_data(self):
         # Create ticket
         ticket_id = self.create_ticket()

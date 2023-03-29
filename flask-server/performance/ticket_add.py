@@ -5,6 +5,10 @@ from performance.base import PerformanceBase
 
 
 class PerformanceTicketAdd(PerformanceBase):
+    def __init__(self):
+        super().__init__()
+        self.route_tested = '/ticket/add'
+
     def run_test(self):
         self.response_times = []
         for i in range(1000):

@@ -4,7 +4,11 @@ import time
 from performance.base import PerformanceBase
 
 
-class PerformanceTicketQRCode(PerformanceBase):
+class PerformanceTicketQRData(PerformanceBase):
+    def __init__(self):
+        super().__init__()
+        self.route_tested = '/ticket/request_qr_data'
+
     def run_test(self):
         self.response_times = []
         for i in range(1000):
@@ -28,7 +32,7 @@ class PerformanceTicketQRCode(PerformanceBase):
 
 
 if __name__ == "__main__":
-    performance_test = PerformanceTicketQRCode()
+    performance_test = PerformanceTicketQRData()
     performance_test.run_test()
     performance_test.plot_graph()
     performance_test.drop_db()

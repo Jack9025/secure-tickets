@@ -35,6 +35,7 @@ def login(client, email_address, password):
 class PerformanceBase:
     def __init__(self):
         # Performance
+        self.route_tested = None
         self.response_times = []
 
         # App
@@ -129,6 +130,8 @@ class PerformanceBase:
 
         plt.xlabel('Run')
         plt.ylabel('Response time (ms)')
+        if self.route_tested:
+            plt.title(f"Performance of '{self.route_tested}' route")
         plt.show()
 
     def drop_db(self):
