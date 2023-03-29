@@ -18,7 +18,7 @@ class Config:
     JWT_TOKEN_LOCATION = ["headers", "cookies"]
     SQLALCHEMY_DATABASE_URI = DATABASE
     HOST = {config('HOST', default="localhost"), "localhost"}
-    SELF_SIGNED = config('SELF_SIGNED', cast=bool, default=False)
+    SELF_SIGNED = config('FLASK_SELF_SIGNED', cast=bool, default=False)
 
 
 class DevConfig(Config):

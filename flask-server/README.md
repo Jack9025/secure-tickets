@@ -15,7 +15,7 @@ To run the Flask server bare metal, create a `.env` file in the `flask-server` d
 ```.env
 SECRET_KEY=<YOUR_SECURE_SECRET_KEY>
 JWT_SECRET_KEY=<YOUR_SECURE_JWT_KEY>
-SELF_SIGNED=True
+FLASK_SELF_SIGNED=True
 HOST=<YOUR_IP_ADDRESS>
 ```
 ### Self-Signed Certificate
