@@ -101,7 +101,7 @@ Users are able to register for an account or login to an already existing accoun
 When the user successfully logs in, the server will determine which role they have (either user or management) and the client-side application will then generate the pages of the application based on that role.
 
 ### Events & Buying Tickets
-On the user home page, users can view and search for events. The user can select an event, and they will be presented with details of the event and the option to buy tickets. When the user is buying tickets, a modal will popup which allows the user to select the ticket quantity and ticket type (either standard, VIP or deluxe).
+On the user home page, users can view and search for events. The user can select to 'view event', and they will be presented with details of the event and the option to buy tickets. When the user is buying tickets, a modal will popup which allows the user to select the ticket quantity and ticket type (either standard, VIP or deluxe).
 
 <img src=".screenshots/home_user.png" width="150" alt="Screenshot showing the home page"/> <img src=".screenshots/event_details.png" width="150" alt="Screenshot of event details page"/> <img src=".screenshots/buy_ticket.png" width="150" alt="Screenshot of buy ticket modal"/>
 
