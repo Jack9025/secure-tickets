@@ -69,7 +69,7 @@ class PerformanceBase:
                 if user == USER:
                     self.test_user_id = self.test_user.user_id
 
-            # Create event with venue
+            # Create venue
             self.venue = Venue(
                 name='Test',
                 location='Test',
@@ -77,6 +77,7 @@ class PerformanceBase:
                 capacity=5000,
             )
 
+            # Create event
             self.test_event = Event(
                 venue=self.venue,
                 event_name='Test event',
@@ -85,10 +86,12 @@ class PerformanceBase:
                 description='Test',
             )
 
+            # Save venue and event
             self.venue.save()
             self.test_event.save()
             self.test_event_id = self.test_event.event_id
 
+            # Login as user and management
             self.login_user()
             self.login_management()
 
