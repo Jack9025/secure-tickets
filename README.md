@@ -3,7 +3,7 @@
 # Secure Tickets (Ticketing Web Application)
 ## Contents
 * [Introduction](#Introduction)
-* [Key Features](#Key-Features)
+* [Features](#Features)
   * [Register & Login](#Register--Login)
   * [Events & Buying Tickets](#Events--Buying-Tickets)
   * [Account](#Account)
