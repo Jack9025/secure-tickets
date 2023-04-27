@@ -6,9 +6,9 @@ Within the /frontend directory:
 
 Then navigate to http://localhost:3000
 
-# How to use QR code scanner (for now)
+# How to use QR code scanner
 ## Desktop
-As long as you are navigating to QR code scanner from `localhost` then it should use your webcam as expected
+As long as you are navigating to QR code scanner from `localhost` then it should use your webcam as expected to validate tickets as a management user.
 
 ## Mobile
 To use it on mobile, React and Flask must be running securely on HTTPS.
@@ -18,10 +18,3 @@ in mobile browser. You may also have to navigate to https://localip:5000/docs in
 Flask's 5000 port.
 
 To set the local IP, look in `package.json` and change the `REACT_APP_ROUTE_URL` to equal your IP with HTTPS and the 5000 port.
-
-To run Flask on HTTPS add following parameters to `app.run()` => `
-    app.run(host="0.0.0.0", port=5000, debug=True, ssl_context=("certificate/cert.pem", "certificate/key.pem"))`
-
-You must also add your local IP to the CORS origins in `app.py`.
-
-Then you must change the routes to be in the form `https://localip:5000/route` anywhere there is a request in the frontend.
